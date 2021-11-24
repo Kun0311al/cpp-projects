@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int rickshaw,car,bike,bus;
+    int rickshaw=0,car=0,bike=0,bus=0;
     int count=0,amount=0;
     int x,y;
 
