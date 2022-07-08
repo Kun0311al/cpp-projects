@@ -97,10 +97,11 @@ void n_acc::change_name(){
 int main(){
     n_acc* U[20];
     int i{0},t;
+    int choice{};
     char user_n[20];
     while (true)
     {
-        int choice{};
+        
         cout<<"1. New Account"<<endl;
         cout<<"2. Balance enquiry"<<endl;
         cout<<"3. Cash withdrawal"<<endl;
@@ -117,6 +118,7 @@ int main(){
             U[i]=new n_acc;
             U[i]->New_account();
             i++;
+            choice = 0;
             break;
 
             //balance enquiry
@@ -137,6 +139,7 @@ int main(){
             {
                 cout<<"user not found";
             }
+            choice = 0;
             break;
 
             //cash withdrawal
@@ -151,6 +154,7 @@ int main(){
                     break;
                 }
             }
+            choice = 0;
             break;
 
             //cash deposit
@@ -165,6 +169,7 @@ int main(){
                     break;
                 }
             } 
+            choice = 0;
             break;   
 
             //edit phone number
@@ -179,6 +184,7 @@ int main(){
                     break;
                 }
             } 
+            choice = 0;
             break;     
             
         
