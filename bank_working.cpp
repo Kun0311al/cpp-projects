@@ -17,6 +17,7 @@ class n_acc{
         int search(char[]);
         void c_withdrawal();
         void c_deposit();
+        void change_name();
          
     private:
         char *user;
@@ -73,6 +74,16 @@ void n_acc::c_deposit(){
     cout<<"New account balance : "<<*amount<<endl;
 }
 
+void n_acc::change_name(){
+    int p_number{};
+    cout<<"Enter new number: "<<endl;
+    cin>>p_number;
+    *number = p_number;
+    cout<<"Change number successfull..:))"<<endl;
+    cout<<"user name: "<<user<<endl;
+    cout<<"New phone number : "<<*number<<endl;
+}
+
 int main(){
     n_acc* U[20];
     int choice{};
@@ -84,7 +95,7 @@ int main(){
         cout<<"2. Balance enquiry"<<endl;
         cout<<"3. Cash withdrawal"<<endl;
         cout<<"4. Cash deposit"<<endl;
-        cout<<"5. Edit name"<<endl;
+        cout<<"5. Edit phone number"<<endl;
         cin>>choice;
         
         switch (choice)
@@ -141,7 +152,22 @@ int main(){
                     U[t]->c_deposit();
                     break;
                 }
-            }            
+            } 
+            break;   
+
+            //edit phone number
+        case 5:
+            cin.ignore();
+            cout<<"Enter user name: "<<endl;
+            cin.getline(user_n,20);
+            for(t=0;t<i;t++){
+                if (U[t]->search(user_n)){
+                    cout<<"User found succesfully";
+                    U[t]->change_name();
+                    break;
+                }
+            } 
+            break;     
             
         
         default:
