@@ -9,7 +9,7 @@ class n_acc{
         n_acc(){
             user = new char[20];
             amount =new float;
-            number = new long;
+            number = new int;
         }
 
         //funtion declaration
@@ -23,7 +23,7 @@ class n_acc{
     private:
         char *user;
         float *amount;
-        long  *number;
+        int  *number;
 };
 
 //functions definations
@@ -114,85 +114,86 @@ int main(){
         switch (choice)
         {
             //New account
-        case 1:
-            U[i]=new n_acc;
-            U[i]->New_account();
-            i++;
-            choice = 0;
-            break;
+            case 1:
+                U[i]=new n_acc;
+                U[i]->New_account();
+                i++;
+                choice = 0;
+                break;
 
-            //balance enquiry
-        case 2:
-            cin.ignore();
-            cout<<"Enter user name: "<<endl;
-            cin.getline(user_n,20);
-            for(t=0;t<i;t++){
-                if (U[t]->search(user_n))
+                //balance enquiry
+            case 2:
+                cin.ignore();
+                cout<<"Enter user name: "<<endl;
+                cin.getline(user_n,20);
+                for(t=0;t<i;t++){
+                    if (U[t]->search(user_n))
+                    {
+                        cout<<"User found succesfully";
+                        U[t]->showdata();
+                        break;
+                    }
+                    
+                }
+                if (t==1)
                 {
-                    cout<<"User found succesfully";
-                    U[t]->showdata();
-                    break;
+                    cout<<"user not found";
                 }
+                choice = 0;
+                break;
+
+                //cash withdrawal
+            case 3:
+                cin.ignore();
+                cout<<"Enter user name: "<<endl;
+                cin.getline(user_n,20);
+                for (t = 0;t < i; t++){
+                    if (U[t]->search(user_n)){
+                        cout<<"User found succesfully";
+                        U[t]->c_withdrawal();
+                        break;
+                    }
+                }
+                choice = 0;
+                break;
+
+                //cash deposit
+            case 4:
+                cin.ignore();
+                cout<<"Enter user name: "<<endl;
+                cin.getline(user_n,20);
+                for(t=0;t<i;t++){
+                    if (U[t]->search(user_n)){
+                        cout<<"User found succesfully";
+                        U[t]->c_deposit();
+                        break;
+                    }
+                } 
+                choice = 0;
+                break;   
+
+                //edit phone number
+            case 5:
+                cin.ignore();
+                cout<<"Enter user name: "<<endl;
+                cin.getline(user_n,20);
+                for(t=0;t<i;t++){
+                    if (U[t]->search(user_n)){
+                        cout<<"User found succesfully";
+                        U[t]->change_name();
+                        break;
+                    }
+                } 
+                choice = 0;
+                break;     
                 
-            }
-            if (t==1)
-            {
-                cout<<"user not found";
-            }
-            choice = 0;
-            break;
-
-            //cash withdrawal
-        case 3:
-            cin.ignore();
-            cout<<"Enter user name: "<<endl;
-            cin.getline(user_n,20);
-            for (t = 0;t < i; t++){
-                if (U[t]->search(user_n)){
-                    cout<<"User found succesfully";
-                    U[t]->c_withdrawal();
-                    break;
-                }
-            }
-            choice = 0;
-            break;
-
-            //cash deposit
-        case 4:
-            cin.ignore();
-            cout<<"Enter user name: "<<endl;
-            cin.getline(user_n,20);
-            for(t=0;t<i;t++){
-                if (U[t]->search(user_n)){
-                    cout<<"User found succesfully";
-                    U[t]->c_deposit();
-                    break;
-                }
-            } 
-            choice = 0;
-            break;   
-
-            //edit phone number
-        case 5:
-            cin.ignore();
-            cout<<"Enter user name: "<<endl;
-            cin.getline(user_n,20);
-            for(t=0;t<i;t++){
-                if (U[t]->search(user_n)){
-                    cout<<"User found succesfully";
-                    U[t]->change_name();
-                    break;
-                }
-            } 
-            choice = 0;
-            break;     
             
-        
-        default:
-            cout<<"Enter valid choice::((("<<endl;
-            break;
+            default:
+                cout<<"Enter valid choice::((("<<endl;
+                break;
         }
         
     }
+    return 0;
     
 }
