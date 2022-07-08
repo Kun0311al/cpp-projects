@@ -106,6 +106,8 @@ int main(){
         cout<<"3. Cash withdrawal"<<endl;
         cout<<"4. Cash deposit"<<endl;
         cout<<"5. Edit phone number"<<endl;
+        cout<<endl;
+        cout<<"enter your choice: "<<endl;
         cin>>choice;
         
         switch (choice)
