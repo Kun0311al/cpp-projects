@@ -9,7 +9,7 @@ class n_acc{
         n_acc(){
             user = new char[20];
             amount =new float;
-            number = new int;
+            number = new long long;
         }
 
         //funtion declaration
@@ -23,7 +23,7 @@ class n_acc{
     private:
         char *user;
         float *amount;
-        int  *number;
+        long long *number;
 };
 
 //functions definations
@@ -91,6 +91,7 @@ void n_acc::change_name(){
     cout<<"Change number successfull..:))"<<endl;
     cout<<"user name: "<<user<<endl;
     cout<<"New phone number : "<<*number<<endl;
+    cout<<endl;
 }
 
 //main function
@@ -132,14 +133,11 @@ int main(){
                         cout<<"User found succesfully";
                         U[t]->showdata();
                         break;
+                    }else if (t==1){
+                        cout<<"user not found";
                     }
-                    
+                choice = 0;   
                 }
-                if (t==1)
-                {
-                    cout<<"user not found";
-                }
-                choice = 0;
                 break;
 
                 //cash withdrawal
@@ -152,6 +150,8 @@ int main(){
                         cout<<"User found succesfully";
                         U[t]->c_withdrawal();
                         break;
+                    }else{
+                        cout<<"user not found";
                     }
                 }
                 choice = 0;
@@ -167,6 +167,8 @@ int main(){
                         cout<<"User found succesfully";
                         U[t]->c_deposit();
                         break;
+                    }else{
+                        cout<<"user not found";
                     }
                 } 
                 choice = 0;
@@ -182,6 +184,8 @@ int main(){
                         cout<<"User found succesfully";
                         U[t]->change_name();
                         break;
+                    }else{
+                        cout<<"user not found";
                     }
                 } 
                 choice = 0;
