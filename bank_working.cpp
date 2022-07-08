@@ -12,6 +12,7 @@ class n_acc{
             number = new long;
         }
 
+        //funtion declaration
         void New_account();
         void showdata();
         int search(char[]);
@@ -25,6 +26,8 @@ class n_acc{
         long  *number;
 };
 
+//functions definations
+//new account
 void n_acc::New_account(){
     cin.ignore();
     cout<<"Enter Your name: "<<endl;
@@ -35,12 +38,14 @@ void n_acc::New_account(){
     cin>>*number;
 }
 
+//data show case
 void n_acc::showdata(){
     cout<<"User name: "<<user<<endl;
     cout<<"Amount: "<<*amount;
     cout<<"Phone no: "<<*number;
 }
 
+//search user
 int n_acc::search(char user_ID[20]){
     if(strcmp(user_ID,user)==0){
         return 1;
@@ -49,6 +54,8 @@ int n_acc::search(char user_ID[20]){
     }
 }
 
+
+//cash withdrawal
 void n_acc::c_withdrawal(){
     int cash{};
     cout<<"Enter amount: "<<endl;
@@ -64,6 +71,7 @@ void n_acc::c_withdrawal(){
     
 }
 
+//cash deposit
 void n_acc::c_deposit(){
     int cash{};
     cout<<"Enter Amount : "<<endl;
@@ -74,6 +82,7 @@ void n_acc::c_deposit(){
     cout<<"New account balance : "<<*amount<<endl;
 }
 
+//change name
 void n_acc::change_name(){
     int p_number{};
     cout<<"Enter new number: "<<endl;
@@ -84,6 +93,7 @@ void n_acc::change_name(){
     cout<<"New phone number : "<<*number<<endl;
 }
 
+//main function
 int main(){
     n_acc* U[20];
     int choice{};
@@ -171,6 +181,7 @@ int main(){
             
         
         default:
+            cout<<"Enter valid choice::((("<<endl;
             break;
         }
         
