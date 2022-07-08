@@ -15,6 +15,7 @@ class n_acc{
         void New_account();
         void showdata();
         int search(char[]);
+        void c_withdrawal();
          
     private:
         char *user;
@@ -46,6 +47,20 @@ int n_acc::search(char user_ID[20]){
     }
 }
 
+void n_acc::c_withdrawal(){
+    int cash{};
+    cout<<"Enter amount: "<<endl;
+    cin>>cash;
+    if (cash<=*amount){
+        *amount -= cash;
+        cout<<"cash withdrawal sucessfull"<<endl;
+        cout<<"collet your cash1.."<<endl;
+    }else{
+        cout<<"Not enough amount in account...:(("<<endl;
+    }
+    
+}
+
 int main(){
     n_acc* U[20];
     int choice{};
@@ -62,11 +77,14 @@ int main(){
         
         switch (choice)
         {
+            //New account
         case 1:
             U[i]=new n_acc;
             U[i]->New_account();
             i++;
             break;
+
+            //balance enquiry
         case 2:
             cin.ignore();
             cout<<"Enter user name: "<<endl;
@@ -85,6 +103,20 @@ int main(){
                 cout<<"user not found";
             }
             break;
+
+            //cash withdrawal
+        case 3:
+            cin.ignore();
+            cout<<"Enter user name: "<<endl;
+            cin.getline(user_n,20);
+            for (t = 0;t < i; t++){
+                if (U[t]->search(user_n)){
+                    cout<<"User found succesfully";
+                    U[t]->c_withdrawal();
+                    break;
+                }
+            }
+            
             
         
         default:
