@@ -1,5 +1,7 @@
 #include<iostream>
 #include<string>
+#include<stdlib.h>
+#include<cstring>
 using namespace std;
 
 class n_acc{
@@ -36,10 +38,18 @@ void n_acc::showdata(){
     cout<<"Phone no: "<<*number;
 }
 
+int n_acc::search(char user_ID[20]){
+    if(strcmp(user_ID,user)==0){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
 int main(){
     n_acc* U[20];
     int choice{};
-    int i{0};
+    int i{0},t;
     char user_n[20];
     while (true)
     {
@@ -61,8 +71,8 @@ int main(){
             cin.ignore();
             cout<<"Enter user name: "<<endl;
             cin.getline(user_n,20);
-            for(int t=0;t<i;t++){
-                if (U[t]->search(user))
+            for(t=0;t<i;t++){
+                if (U[t]->search(user_n))
                 {
                     cout<<"User found succesfully";
                     U[t]->showdata();
@@ -70,7 +80,7 @@ int main(){
                 }
                 
             }
-            if (t==i)
+            if (t==1)
             {
                 cout<<"user not found";
             }
