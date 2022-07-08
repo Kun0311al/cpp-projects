@@ -96,11 +96,11 @@ void n_acc::change_name(){
 //main function
 int main(){
     n_acc* U[20];
-    int choice{};
     int i{0},t;
     char user_n[20];
     while (true)
     {
+        int choice{};
         cout<<"1. New Account"<<endl;
         cout<<"2. Balance enquiry"<<endl;
         cout<<"3. Cash withdrawal"<<endl;
