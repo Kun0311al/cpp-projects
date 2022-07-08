@@ -31,7 +31,9 @@ void n_acc::New_account(){
 }
 
 void n_acc::showdata(){
-    
+    cout<<"User name: "<<user<<endl;
+    cout<<"Amount: "<<*amount;
+    cout<<"Phone no: "<<*number;
 }
 
 int main(){
