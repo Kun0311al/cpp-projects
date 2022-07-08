@@ -84,7 +84,7 @@ void n_acc::c_deposit(){
 
 //change name
 void n_acc::change_name(){
-    int p_number{};
+    long long p_number{};
     cout<<"Enter new number: "<<endl;
     cin>>p_number;
     *number = p_number;
