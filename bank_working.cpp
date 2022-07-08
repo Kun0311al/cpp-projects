@@ -16,6 +16,7 @@ class n_acc{
         void showdata();
         int search(char[]);
         void c_withdrawal();
+        void c_deposit();
          
     private:
         char *user;
@@ -54,11 +55,22 @@ void n_acc::c_withdrawal(){
     if (cash<=*amount){
         *amount -= cash;
         cout<<"cash withdrawal sucessfull"<<endl;
-        cout<<"collet your cash1.."<<endl;
+        cout<<"collet your cash1..:))"<<endl;
+        cout<<"New account balance: "<<*amount<<endl;
     }else{
         cout<<"Not enough amount in account...:(("<<endl;
     }
     
+}
+
+void n_acc::c_deposit(){
+    int cash{};
+    cout<<"Enter Amount : "<<endl;
+    cin>>cash;
+    *amount += cash;
+    cout<<"user name: "<<user<<endl;
+    cout<<"cash deposited successfully..:))"<<endl;
+    cout<<"New account balance : "<<*amount<<endl;
 }
 
 int main(){
@@ -116,7 +128,20 @@ int main(){
                     break;
                 }
             }
-            
+            break;
+
+            //cash deposit
+        case 4:
+            cin.ignore();
+            cout<<"Enter user name: "<<endl;
+            cin.getline(user_n,20);
+            for(t=0;t<i;t++){
+                if (U[t]->search(user_n)){
+                    cout<<"User found succesfully";
+                    U[t]->c_deposit();
+                    break;
+                }
+            }            
             
         
         default:
