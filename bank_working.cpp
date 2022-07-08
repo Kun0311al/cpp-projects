@@ -96,8 +96,8 @@ void n_acc::change_name(){
 //main function
 int main(){
     n_acc* U[20];
-    int i{0},t;
-    int choice{};
+    int i{0},t{0};
+    int choice{0};
     char user_n[20];
     while (true)
     {
