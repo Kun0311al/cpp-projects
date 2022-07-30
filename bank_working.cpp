@@ -65,11 +65,15 @@ void n_acc::c_withdrawal(){
     cin>>cash;
     if (cash<=*amount){
         *amount -= cash;
-        cout<<endl<<"cash withdrawal sucessfull"<<endl;
+        cout<<endl<<"***************************************"<<endl;
+        cout<<"cash withdrawal sucessfull"<<endl;
         cout<<"collet your cash1..:))"<<endl;
-        cout<<"New account balance: "<<*amount<<endl<<endl;
+        cout<<"New account balance: "<<*amount<<endl;
+        cout<<"***************************************"<<endl<<endl;
     }else{
-        cout<<endl<<"Not enough amount in account...:(("<<endl<<endl;
+        cout<<endl<<"***************************************"<<endl;
+        cout<<"Not enough amount in account...:(("<<endl;
+        cout<<"***************************************"<<endl<<endl;
     }
     
 }
