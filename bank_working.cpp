@@ -2,6 +2,7 @@
 #include<string>
 #include<stdlib.h>
 #include<cstring>
+#include<iomanip>
 using namespace std;
 
 class n_acc{
@@ -44,9 +45,9 @@ void n_acc::New_account(){
 //data show case
 void n_acc::showdata(){
     cout<<"***************************************"<<endl;
-    cout<<"User name: "<<user<<endl;
-    cout<<"Amount: "<<*amount<<endl;
-    cout<<"Phone no: "<<*number<<endl;
+    cout<<setw(20)<<"User name: "<<setw(20)<<user<<endl;
+    cout<<setw(20)<<"Amount: "<<setw(20)<<*amount<<endl;
+    cout<<setw(20)<<"Phone no: "<<setw(20)<<*number<<endl;
     cout<<"***************************************"<<endl<<endl;
 }
 
@@ -70,7 +71,7 @@ void n_acc::c_withdrawal(){
         cout<<endl<<"***************************************"<<endl;
         cout<<"cash withdrawal sucessfull"<<endl;
         cout<<"collet your cash1..:))"<<endl;
-        cout<<"New account balance: "<<*amount<<endl;
+        cout<<setw(20)<<"New account balance:"<<setw(20)<<*amount<<endl;
         cout<<"***************************************"<<endl<<endl;
     }else{
         cout<<endl<<"***************************************"<<endl;
@@ -87,9 +88,9 @@ void n_acc::c_deposit(){
     cin>>cash;
     *amount += cash;
     cout<<"***************************************"<<endl;
-    cout<<"user name: "<<user<<endl;
     cout<<"cash deposited successfully..:))"<<endl;
-    cout<<"New account balance : "<<*amount<<endl;
+    cout<<setw(20)<<"user name: "<<setw(20)<<user<<endl;
+    cout<<setw(20)<<"New account balance : "<<setw(20)<<*amount<<endl;
     cout<<"***************************************"<<endl<<endl;
 }
 
@@ -101,16 +102,15 @@ void n_acc::change_name(){
     *number = p_number;
     cout<<"***************************************"<<endl;
     cout<<endl<<"Change number successfull..:))"<<endl<<endl;
-    cout<<"user name: "<<user<<endl;
-    cout<<"New phone number : "<<*number<<endl;
+    cout<<setw(20)<<"user name: "<<setw(20)<<user<<endl;
+    cout<<setw(20)<<"New phone number : "<<setw(20)<<*number<<endl;
     cout<<"***************************************"<<endl<<endl;
 }
 
 //main function
 int main(){
     n_acc* U[20];
-    int i{0},t{0};
-    int choice{0};
+    int i{0},t{0},choice{0};
     char user_n[20];
     while (true)
     {
