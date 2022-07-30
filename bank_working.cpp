@@ -43,9 +43,11 @@ void n_acc::New_account(){
 
 //data show case
 void n_acc::showdata(){
-    cout<<endl<<"User name: "<<user<<endl;
+    cout<<"***************************************"<<endl;
+    cout<<"User name: "<<user<<endl;
     cout<<"Amount: "<<*amount<<endl;
-    cout<<"Phone no: "<<*number<<endl<<endl;
+    cout<<"Phone no: "<<*number<<endl;
+    cout<<"***************************************"<<endl<<endl;
 }
 
 //search user
