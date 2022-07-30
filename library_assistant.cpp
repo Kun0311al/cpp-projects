@@ -27,7 +27,7 @@ public:
 
 void book::feeddata()	{
 	cin.ignore();
-	cout<<"\nEnter Author Name: ";      cin.getline(author,20);
+	cout<<"\nEnter Author Name: ";    cin.getline(author,20);
 	cout<<"Enter Title Name: ";       cin.getline(title,20);
 	cout<<"Enter Publisher Name: ";   cin.getline(publisher,20);
 	cout<<"Enter Price: ";            cin>>*price;
@@ -37,7 +37,7 @@ void book::feeddata()	{
 
 void book::editdata()	{
 	
-	cout<<"\nEnter Author Name: ";      cin.getline(author,20);
+	cout<<"\nEnter Author Name: ";    cin.getline(author,20);
 	cout<<"Enter Title Name: ";       cin.getline(title,20);
 	cout<<"Enter Publisher Name: ";   cin.getline(publisher,20);
 	cout<<"Enter Price: ";            cin>>*price;
@@ -79,7 +79,7 @@ int main()	{
 	int i=0,r,t,choice;
 	char titlebuy[20],authorbuy[20];
 	while(1)	{
-		cout<<"\n\n\t\tMENU"
+		cout<<"\n\n\tMENU"
 		<<"\n1. Entry of New Book"
 		<<"\n2. Buy Book"
 		<<"\n3. Search For Book"
