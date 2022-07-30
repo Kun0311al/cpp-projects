@@ -61,7 +61,7 @@ int book::search(char tbuy[20],char abuy[20] )	{
 		
 }
 
-void book::buybook()	{
+void book::buybook(){
 	int count;
 	cout<<"\nEnter Number Of Books to buy: ";
 	cin>>count;

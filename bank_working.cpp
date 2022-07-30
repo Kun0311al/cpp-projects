@@ -36,13 +36,16 @@ void n_acc::New_account(){
     cin>>*amount;
     cout<<"Enter phone no.: "<<endl;
     cin>>*number;
+    cout<<"***************************************"<<endl;
+    cout<<"Account created successfully!!"<<endl;
+    cout<<"***************************************"<<endl<<endl;
 }
 
 //data show case
 void n_acc::showdata(){
-    cout<<"User name: "<<user<<endl;
+    cout<<endl<<"User name: "<<user<<endl;
     cout<<"Amount: "<<*amount<<endl;
-    cout<<"Phone no: "<<*number<<endl;
+    cout<<"Phone no: "<<*number<<endl<<endl;
 }
 
 //search user
@@ -62,11 +65,11 @@ void n_acc::c_withdrawal(){
     cin>>cash;
     if (cash<=*amount){
         *amount -= cash;
-        cout<<"cash withdrawal sucessfull"<<endl;
+        cout<<endl<<"cash withdrawal sucessfull"<<endl;
         cout<<"collet your cash1..:))"<<endl;
-        cout<<"New account balance: "<<*amount<<endl;
+        cout<<"New account balance: "<<*amount<<endl<<endl;
     }else{
-        cout<<"Not enough amount in account...:(("<<endl;
+        cout<<endl<<"Not enough amount in account...:(("<<endl<<endl;
     }
     
 }
@@ -77,21 +80,20 @@ void n_acc::c_deposit(){
     cout<<"Enter Amount : "<<endl;
     cin>>cash;
     *amount += cash;
-    cout<<"user name: "<<user<<endl;
+    cout<<endl<<"user name: "<<user<<endl;
     cout<<"cash deposited successfully..:))"<<endl;
-    cout<<"New account balance : "<<*amount<<endl;
+    cout<<"New account balance : "<<*amount<<endl<<endl;
 }
 
 //change name
 void n_acc::change_name(){
     long long p_number{};
-    cout<<"Enter new number: "<<endl;
+    cout<<endl<<"Enter new number: "<<endl<<endl;
     cin>>p_number;
     *number = p_number;
-    cout<<"Change number successfull..:))"<<endl;
+    cout<<endl<<"Change number successfull..:))"<<endl;
     cout<<"user name: "<<user<<endl;
-    cout<<"New phone number : "<<*number<<endl;
-    cout<<endl;
+    cout<<"New phone number : "<<*number<<endl<<endl;
 }
 
 //main function
@@ -107,8 +109,7 @@ int main(){
         cout<<"2. Balance enquiry"<<endl;
         cout<<"3. Cash withdrawal"<<endl;
         cout<<"4. Cash deposit"<<endl;
-        cout<<"5. Edit phone number"<<endl;
-        cout<<endl;
+        cout<<"5. Edit phone number"<<endl<<endl;
         cout<<"enter your choice: "<<endl;
         cin>>choice;
         
@@ -130,11 +131,11 @@ int main(){
                 for(t=0;t<i;t++){
                     if (U[t]->search(user_n))
                     {
-                        cout<<"User found succesfully"<<endl;
+                        cout<<"User found succesfully"<<endl<<endl;
                         U[t]->showdata();
                         break;
                     }else if (t==1){
-                        cout<<"user not found"<<endl;
+                        cout<<"user not found"<<endl<<endl;
                     }
                 choice = 0;   
                 }
