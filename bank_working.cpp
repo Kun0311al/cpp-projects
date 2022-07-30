@@ -86,9 +86,11 @@ void n_acc::c_deposit(){
     cout<<"Enter Amount : "<<endl;
     cin>>cash;
     *amount += cash;
-    cout<<endl<<"user name: "<<user<<endl;
+    cout<<"***************************************"<<endl;
+    cout<<"user name: "<<user<<endl;
     cout<<"cash deposited successfully..:))"<<endl;
-    cout<<"New account balance : "<<*amount<<endl<<endl;
+    cout<<"New account balance : "<<*amount<<endl;
+    cout<<"***************************************"<<endl<<endl;
 }
 
 //change name
@@ -97,9 +99,11 @@ void n_acc::change_name(){
     cout<<endl<<"Enter new number: "<<endl<<endl;
     cin>>p_number;
     *number = p_number;
-    cout<<endl<<"Change number successfull..:))"<<endl;
+    cout<<"***************************************"<<endl;
+    cout<<endl<<"Change number successfull..:))"<<endl<<endl;
     cout<<"user name: "<<user<<endl;
-    cout<<"New phone number : "<<*number<<endl<<endl;
+    cout<<"New phone number : "<<*number<<endl;
+    cout<<"***************************************"<<endl<<endl;
 }
 
 //main function
