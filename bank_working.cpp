@@ -8,7 +8,7 @@ using namespace std;
 class n_acc{
     public:
         n_acc(){
-            user = new char[20];
+            user = new char[50];
             amount =new float;
             number = new long long;
         }
@@ -32,7 +32,7 @@ class n_acc{
 void n_acc::New_account(){
     cin.ignore();
     cout<<"Enter Your name: "<<endl;
-    cin.getline(user,20);
+    cin.getline(user,50);
     cout<<"Enter amount:"<<endl;
     cin>>*amount;
     cout<<"Enter phone no.: "<<endl;
@@ -52,7 +52,7 @@ void n_acc::showdata(){
 }
 
 //search user
-int n_acc::search(char user_ID[20]){
+int n_acc::search(char user_ID[50]){
     if(strcmp(user_ID,user)==0){
         return 1;
     }else{
@@ -109,12 +109,13 @@ void n_acc::change_name(){
 
 //main function
 int main(){
+    system("cls");
     n_acc* U[20];
     int i{0},t{0},choice{0};
     char user_n[20];
     while (true)
     {
-        
+        cout<<"\t\tWelcome to Apna Bank\t\t"<<endl<<endl;
         cout<<"1. New Account"<<endl;
         cout<<"2. Balance enquiry"<<endl;
         cout<<"3. Cash withdrawal"<<endl;
