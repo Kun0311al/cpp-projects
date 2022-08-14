@@ -138,7 +138,7 @@ int main(){
             case 2:
                 cin.ignore();
                 cout<<"Enter user name: "<<endl;
-                cin.getline(user_n,20);
+                cin.getline(user_n,50);
                 for(t=0;t<i;t++){
                     if (U[t]->search(user_n))
                     {
@@ -156,7 +156,7 @@ int main(){
             case 3:
                 cin.ignore();
                 cout<<"Enter user name: "<<endl;
-                cin.getline(user_n,20);
+                cin.getline(user_n,50);
                 for (t = 0;t < i; t++){
                     if (U[t]->search(user_n)){
                         cout<<"User found succesfully"<<endl;
@@ -173,7 +173,7 @@ int main(){
             case 4:
                 cin.ignore();
                 cout<<"Enter user name: "<<endl;
-                cin.getline(user_n,20);
+                cin.getline(user_n,50);
                 for(t=0;t<i;t++){
                     if (U[t]->search(user_n)){
                         cout<<"User found succesfully"<<endl;
@@ -190,7 +190,7 @@ int main(){
             case 5:
                 cin.ignore();
                 cout<<"Enter user name: "<<endl;
-                cin.getline(user_n,20);
+                cin.getline(user_n,50);
                 for(t=0;t<i;t++){
                     if (U[t]->search(user_n)){
                         cout<<"User found succesfully"<<endl;
