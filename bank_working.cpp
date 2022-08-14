@@ -45,7 +45,7 @@ void n_acc::New_account(){
 //data show case
 void n_acc::showdata(){
     cout<<"***************************************"<<endl;
-    cout<<setw(20)<<"User name: "<<setw(20)<<user<<endl;
+    cout<<setw(20)<<"User name: "<<setw(50)<<user<<endl;
     cout<<setw(20)<<"Amount: "<<setw(20)<<*amount<<endl;
     cout<<setw(20)<<"Phone no: "<<setw(20)<<*number<<endl;
     cout<<"***************************************"<<endl<<endl;
@@ -89,8 +89,8 @@ void n_acc::c_deposit(){
     *amount += cash;
     cout<<"***************************************"<<endl;
     cout<<"cash deposited successfully..:))"<<endl;
-    cout<<setw(20)<<"user name: "<<setw(20)<<user<<endl;
-    cout<<setw(20)<<"New account balance : "<<setw(20)<<*amount<<endl;
+    cout<<setw(20)<<"user name: "<<setw(50)<<user<<endl;
+    cout<<setw(20)<<"New account balance: "<<setw(20)<<*amount<<endl;
     cout<<"***************************************"<<endl<<endl;
 }
 
@@ -102,7 +102,7 @@ void n_acc::change_name(){
     *number = p_number;
     cout<<"***************************************"<<endl;
     cout<<endl<<"Change number successfull..:))"<<endl<<endl;
-    cout<<setw(20)<<"user name: "<<setw(20)<<user<<endl;
+    cout<<setw(20)<<"user name: "<<setw(50)<<user<<endl;
     cout<<setw(20)<<"New phone number : "<<setw(20)<<*number<<endl;
     cout<<"***************************************"<<endl<<endl;
 }
@@ -142,11 +142,11 @@ int main(){
                 for(t=0;t<i;t++){
                     if (U[t]->search(user_n))
                     {
-                        cout<<"User found succesfully"<<endl<<endl;
+                        cout<<endl<<"User found succesfully"<<endl<<endl;
                         U[t]->showdata();
                         break;
                     }else if (t==1){
-                        cout<<"user not found"<<endl<<endl;
+                        cout<<endl<<"user not found"<<endl<<endl;
                     }
                 choice = 0;   
                 }
@@ -159,11 +159,11 @@ int main(){
                 cin.getline(user_n,50);
                 for (t = 0;t < i; t++){
                     if (U[t]->search(user_n)){
-                        cout<<"User found succesfully"<<endl;
+                        cout<<endl<<"User found succesfully"<<endl;
                         U[t]->c_withdrawal();
                         break;
                     }else{
-                        cout<<"user not found"<<endl;
+                        cout<<endl<<"user not found"<<endl;
                     }
                 }
                 choice = 0;
@@ -176,11 +176,11 @@ int main(){
                 cin.getline(user_n,50);
                 for(t=0;t<i;t++){
                     if (U[t]->search(user_n)){
-                        cout<<"User found succesfully"<<endl;
+                        cout<<endl<<"User found succesfully"<<endl;
                         U[t]->c_deposit();
                         break;
                     }else{
-                        cout<<"user not found"<<endl;
+                        cout<<endl<<"user not found"<<endl;
                     }
                 } 
                 choice = 0;
@@ -193,11 +193,11 @@ int main(){
                 cin.getline(user_n,50);
                 for(t=0;t<i;t++){
                     if (U[t]->search(user_n)){
-                        cout<<"User found succesfully"<<endl;
+                        cout<<endl<<"User found succesfully"<<endl;
                         U[t]->change_name();
                         break;
                     }else{
-                        cout<<"user not found"<<endl;
+                        cout<<endl<<"user not found"<<endl;
                     }
                 } 
                 choice = 0;
@@ -205,7 +205,7 @@ int main(){
                 
             
             default:
-                cout<<"Enter valid choice::((("<<endl;
+                cout<<endl<<"Enter valid choice::((("<<endl<<endl;
                 break;
         }
         
