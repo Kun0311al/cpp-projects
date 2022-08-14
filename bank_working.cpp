@@ -145,7 +145,7 @@ int main(){
                         cout<<endl<<"User found succesfully"<<endl<<endl;
                         U[t]->showdata();
                         break;
-                    }else if (t==1){
+                    }else if (t==0){
                         cout<<endl<<"user not found"<<endl<<endl;
                     }
                 choice = 0;   
@@ -162,7 +162,7 @@ int main(){
                         cout<<endl<<"User found succesfully"<<endl;
                         U[t]->c_withdrawal();
                         break;
-                    }else{
+                    }else if (t==0){
                         cout<<endl<<"user not found"<<endl;
                     }
                 }
@@ -179,7 +179,7 @@ int main(){
                         cout<<endl<<"User found succesfully"<<endl;
                         U[t]->c_deposit();
                         break;
-                    }else{
+                    }else if (t==0){
                         cout<<endl<<"user not found"<<endl;
                     }
                 } 
@@ -196,7 +196,7 @@ int main(){
                         cout<<endl<<"User found succesfully"<<endl;
                         U[t]->change_name();
                         break;
-                    }else{
+                    }else if (t==0){
                         cout<<endl<<"user not found"<<endl;
                     }
                 } 
