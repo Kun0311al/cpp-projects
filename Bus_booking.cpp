@@ -24,6 +24,7 @@ class bus {
 };
 
 void bus::feed_entry(){
+    cin.ignore();
     cout<<"Enter Bus Name: ";
     cin.getline(bus_name,50);
     cout<<"Starting Point of Bus: ";
@@ -99,6 +100,7 @@ int main(){
             break;
         
         case 2:
+        cin.ignore();
             cout<<"Enter Bus Name: \n";
             cin.getline(bus_Name,50);
             for(t=0;t<i;t++){
@@ -115,6 +117,7 @@ int main(){
             break;
 
         case 3:
+        cin.ignore();
             cout<<"Enter Bus Name: \n";
             cin.getline(bus_Name,50);
             for (t = 0; t < i; t++)
@@ -132,6 +135,7 @@ int main(){
             break;
 
         case 4:
+        cin.ignore();
             cout<<"Enter Your Bus Ticket: \n";
             cin.getline(bus_Name,50);
             for (t = 0; t < i; t++)
