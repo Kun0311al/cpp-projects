@@ -109,7 +109,7 @@ int main(){
                     b[t] -> show_data();
                     break;
                 }
-                else if(t==i){
+                else{
                     cout<<"Bus not found check bus name.\n";
                     break;
                 }
@@ -126,8 +126,7 @@ int main(){
                     b[t]->buy_ticket();
                     break;
                 }
-                else if (t==i)
-                {
+                else{
                     cout<<"Enter valid Bus Name.\n";
                     break;
                 } 
@@ -143,8 +142,7 @@ int main(){
                 if (b[t] -> search(bus_Name)){
                     b[t]->cancel_ticket();
                     break;
-                }else if(t==i)
-                {
+                }else{
                     cout<<"Enter valid Bus Name.\n";
                     break;
                 }
