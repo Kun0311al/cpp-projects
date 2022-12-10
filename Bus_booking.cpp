@@ -49,13 +49,11 @@ int bus::search(char name[50]){
 }
 
 void bus::show_data(){
-    cout<<setw(20)<<setfill('*');
     cout<<"Bus name: "<<bus_name<<"\n";
     cout<<"Arrival: "<<arrival<<"\n";
     cout<<"Destination: "<<destination<<"\n";
     cout<<"Available Seats: "<<*seat<<"\n";
     cout<<"Price: "<<*price<<"\n";
-    cout<<setw(20)<<setfill('*');
 }
 
 void bus::buy_ticket(){
@@ -63,15 +61,11 @@ void bus::buy_ticket(){
     cout<<"\n\nEnter the Number of seat: ";
     cin>>seat_count;
     if(seat_count<=*seat){
-        cout<<setw(20)<<setfill('*');
         cout<<"\n\nTicket Booked Successfully.\n";
         *seat=*seat-seat_count;
         cout<<"Payable amount: "<<(seat_count*(*price));
-        cout<<setw(20)<<setfill('*');
     }else{
-        cout<<setw(20)<<setfill('*');
         cout<<"\n\nRequire seats are not available. Only "<<*seat<<" seats are available.";
-        cout<<setw(20)<<setfill('*');
     }
 }
 
@@ -80,22 +74,19 @@ void bus::cancel_ticket(){
     cout<<"\n\nEnter the numbers of seat: ";
     cin>>cancel_count;
     *seat=*seat+cancel_count;
-    cout<<setw(20)<<setfill('*');
     cout<<"\n\nyour "<<cancel_count<<" tickets are canceled. Thank You.\n";
     cout<<"your ticket amount will sent to your bank in 2-3 week days.\n";
-    cout<<setw(20)<<setfill('*');
 }
 
 int main(){
+    system ("cls");
     bus *b[100];
     int i{0},t,choice;
     char end_point[100], start_point[100], bus_Name[100];
 
     while (1)
     {
-        cout<<setw(20)<<setfill('*');
         cout<<"\n\nWelcome to Samarth Travels\n";
-        cout<<setw(20)<<setfill('*');
         cout<<"\nEnter your choice from below\n";
         cout<<"1. New Bus Entry\n";
         cout<<"2. Check Availability \n";
@@ -122,9 +113,7 @@ int main(){
                     break;
                 }
                 else{
-                    cout<<setw(20)<<setfill('*');
                     cout<<"\nBus not found check bus name.\n";
-                    cout<<setw(20)<<setfill('*');
                     break;
                 }
             }
@@ -141,9 +130,7 @@ int main(){
                     break;
                 }
                 else{
-                    cout<<setw(20)<<setfill('*');
                     cout<<"\nEnter valid Bus Name.\n";
-                    cout<<setw(20)<<setfill('*');
                     break;
                 } 
             }
@@ -159,9 +146,7 @@ int main(){
                     b[t]->cancel_ticket();
                     break;
                 }else{
-                    cout<<setw(20)<<setfill('*');
                     cout<<"\nEnter valid Bus Name.\n";
-                    cout<<setw(20)<<setfill('*');
                     break;
                 }
             }
@@ -169,9 +154,7 @@ int main(){
             
             
         default:
-            cout<<setw(20)<<setfill('*');
             cout<<"Enter valid choice.\n";
-            cout<<setw(20)<<setfill('*');
             break;
         }
     }
