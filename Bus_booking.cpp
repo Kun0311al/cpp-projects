@@ -24,12 +24,13 @@ class bus {
 };
 
 void bus::feed_entry(){
-    cout<<"Enter Bus Name: \n";
-    cin.getline(bus_name,50);
+    
     cout<<"Starting Point of Bus: \n";
     cin.getline(arrival,50);
     cout<<"Last Destination of Bus: \n";
     cin.getline(destination,50);
+    cout<<"Enter Bus Name: \n";
+    cin.getline(bus_name,50);
     cout<<"Ticket Fare: \n";
     cin>>*price;
     cout<<"Total Seats in Bus: \n";
