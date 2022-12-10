@@ -24,15 +24,15 @@ class bus {
 };
 
 void bus::feed_entry(){
-    cout<<"Enter Bus Name: \n";
+    cout<<"Enter Bus Name: ";
     cin.getline(bus_name,50);
-    cout<<"Starting Point of Bus: \n";
+    cout<<"Starting Point of Bus: ";
     cin.getline(arrival,50);
-    cout<<"Last Destination of Bus: \n";
+    cout<<"Last Destination of Bus: ";
     cin.getline(destination,50);
-    cout<<"Ticket Fare: \n";
+    cout<<"Ticket Fare: ";
     cin>>*price;
-    cout<<"Total Seats in Bus: \n";
+    cout<<"Total Seats in Bus: ";
     cin>>*seat;
 }
 
@@ -82,7 +82,7 @@ int main(){
 
     while (1)
     {
-        cout<<"Welcome to Samarth Travels\n";
+        cout<<"\n\nWelcome to Samarth Travels\n";
         cout<<"Enter your choice from below\n";
         cout<<"1. New Bus Entry\n";
         cout<<"2. Check Availability \n";
