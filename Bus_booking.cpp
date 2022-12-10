@@ -55,7 +55,7 @@ void bus::show_data(){
     cout<<"Destination: "<<destination<<"\n";
     cout<<"Available Seats: "<<*seat<<"\n";
     cout<<"Price: "<<*price<<"\n";
-    cout<<setw(20)<<setfill('*\n');
+    cout<<setw(20)<<setfill('*');
 }
 
 void bus::buy_ticket(){
@@ -67,11 +67,11 @@ void bus::buy_ticket(){
         cout<<"\n\nTicket Booked Successfully.\n";
         *seat=*seat-seat_count;
         cout<<"Payable amount: "<<(seat_count*(*price));
-        cout<<setw(20)<<setfill('*\n');
+        cout<<setw(20)<<setfill('*');
     }else{
         cout<<setw(20)<<setfill('*');
         cout<<"\n\nRequire seats are not available. Only "<<*seat<<" seats are available.";
-        cout<<setw(20)<<setfill('*\n');
+        cout<<setw(20)<<setfill('*');
     }
 }
 
@@ -83,7 +83,7 @@ void bus::cancel_ticket(){
     cout<<setw(20)<<setfill('*');
     cout<<"\n\nyour "<<cancel_count<<" tickets are canceled. Thank You.\n";
     cout<<"your ticket amount will sent to your bank in 2-3 week days.\n";
-    cout<<setw(20)<<setfill('*\n');
+    cout<<setw(20)<<setfill('*');
 }
 
 int main(){
@@ -124,7 +124,7 @@ int main(){
                 else{
                     cout<<setw(20)<<setfill('*');
                     cout<<"\nBus not found check bus name.\n";
-                    cout<<setw(20)<<setfill('*\n');
+                    cout<<setw(20)<<setfill('*');
                     break;
                 }
             }
@@ -143,7 +143,7 @@ int main(){
                 else{
                     cout<<setw(20)<<setfill('*');
                     cout<<"\nEnter valid Bus Name.\n";
-                    cout<<setw(20)<<setfill('*\n');
+                    cout<<setw(20)<<setfill('*');
                     break;
                 } 
             }
@@ -161,7 +161,7 @@ int main(){
                 }else{
                     cout<<setw(20)<<setfill('*');
                     cout<<"\nEnter valid Bus Name.\n";
-                    cout<<setw(20)<<setfill('*\n');
+                    cout<<setw(20)<<setfill('*');
                     break;
                 }
             }
@@ -171,7 +171,7 @@ int main(){
         default:
             cout<<setw(20)<<setfill('*');
             cout<<"Enter valid choice.\n";
-            cout<<setw(20)<<setfill('*\n');
+            cout<<setw(20)<<setfill('*');
             break;
         }
     }
