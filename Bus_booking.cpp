@@ -25,7 +25,8 @@ class bus {
 
 void bus::feed_entry(){
     cin.ignore();
-    cout<<"Enter Bus Name: ";
+    cout<<"\n\nEnter New Details:\n";
+    cout<<"\nEnter Bus Name: ";
     cin.getline(bus_name,50);
     cout<<"Starting Point of Bus: ";
     cin.getline(arrival,50);
@@ -56,23 +57,23 @@ void bus::show_data(){
 
 void bus::buy_ticket(){
     int seat_count{0};
-    cout<<"Enter the Number of seat: ";
+    cout<<"\n\nEnter the Number of seat: ";
     cin>>seat_count;
     if(seat_count<=*seat){
-        cout<<"Ticket Booked Successfully.\n";
+        cout<<"\n\nTicket Booked Successfully.\n";
         *seat=*seat-seat_count;
         cout<<"Payable amount: "<<(seat_count*(*price));
     }else{
-        cout<<"Require seats are not available. Only "<<*seat<<" seats are available.";
+        cout<<"\n\nRequire seats are not available. Only "<<*seat<<" seats are available.";
     }
 }
 
 void bus::cancel_ticket(){
     int cancel_count{0};
-    cout<<"Enter the numbers of seat: ";
+    cout<<"\n\nEnter the numbers of seat: ";
     cin>>cancel_count;
     *seat=*seat+cancel_count;
-    cout<<"your "<<cancel_count<<" tickets are canceled. Thank You.\n";
+    cout<<"\n\nyour "<<cancel_count<<" tickets are canceled. Thank You.\n";
     cout<<"your ticket amount will sent to your bank in 2-3 week days.\n";
 }
 
@@ -84,11 +85,11 @@ int main(){
     while (1)
     {
         cout<<"\n\nWelcome to Samarth Travels\n";
-        cout<<"Enter your choice from below\n";
+        cout<<"\nEnter your choice from below\n";
         cout<<"1. New Bus Entry\n";
         cout<<"2. Check Availability \n";
         cout<<"3. Book Ticket \n";
-        cout<<"4. Cancel Ticket \n";
+        cout<<"4. Cancel Ticket \n\n";
         cin>>choice;
 
         switch (choice)
@@ -101,7 +102,7 @@ int main(){
         
         case 2:
         cin.ignore();
-            cout<<"Enter Bus Name: \n";
+            cout<<"\nEnter Bus Name: ";
             cin.getline(bus_Name,50);
             for(t=0;t<i;t++){
                 if(b[t] -> search(bus_Name)){
@@ -110,7 +111,7 @@ int main(){
                     break;
                 }
                 else{
-                    cout<<"Bus not found check bus name.\n";
+                    cout<<"\nBus not found check bus name.\n";
                     break;
                 }
             }
@@ -118,7 +119,7 @@ int main(){
 
         case 3:
         cin.ignore();
-            cout<<"Enter Bus Name: \n";
+            cout<<"\nEnter Bus Name: \n";
             cin.getline(bus_Name,50);
             for (t = 0; t < i; t++)
             {
@@ -127,7 +128,7 @@ int main(){
                     break;
                 }
                 else{
-                    cout<<"Enter valid Bus Name.\n";
+                    cout<<"\nEnter valid Bus Name.\n";
                     break;
                 } 
             }
@@ -135,7 +136,7 @@ int main(){
 
         case 4:
         cin.ignore();
-            cout<<"Enter Your Bus Ticket: \n";
+            cout<<"\nEnter Your Bus Ticket: \n";
             cin.getline(bus_Name,50);
             for (t = 0; t < i; t++)
             {
@@ -143,7 +144,7 @@ int main(){
                     b[t]->cancel_ticket();
                     break;
                 }else{
-                    cout<<"Enter valid Bus Name.\n";
+                    cout<<"\nEnter valid Bus Name.\n";
                     break;
                 }
             }
@@ -151,6 +152,7 @@ int main(){
             
             
         default:
+            cout<<"Enter valid choice.\n";
             break;
         }
     }
