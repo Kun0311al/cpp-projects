@@ -50,8 +50,8 @@ void bus::show_data(){
     cout<<"Bus name: "<<bus_name<<"\n";
     cout<<"Arrival: "<<arrival<<"\n";
     cout<<"Destination: "<<destination<<"\n";
-    cout<<"Available Seats: "<<seat<<"\n";
-    cout<<"Price: "<<price<<"\n";
+    cout<<"Available Seats: "<<*seat<<"\n";
+    cout<<"Price: "<<*price<<"\n";
 }
 
 void bus::buy_ticket(){
