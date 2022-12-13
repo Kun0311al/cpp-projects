@@ -6,7 +6,7 @@ using namespace std;
 
 class hotel{
     private:
-        int count{0};
+        int count{0},extra_charges{0};
         int *price;
         char *dine_in, *take_away, *new_dish,*type_dish;
     public:
@@ -26,6 +26,7 @@ class hotel{
 };
 
 void hotel::add_items(){
+    cin.ignore();
     cout<<"Enter Name of new dish: "; cin.getline(new_dish,20);
     cout<<"Enter the class of dish: "; cin.getline(type_dish,20);
     cout<<"Enter the price of dish: "; cin>>*price;
@@ -45,6 +46,7 @@ int hotel::search(char order_dish[20]){
 
 void hotel::dine_in(){
     cout<<"How much dishes you want? \n"; cin>>count;
+    extra_charges = 0;
 }
 
 void hotel::bill_genetator(){
@@ -55,8 +57,14 @@ void hotel::bill_genetator(){
     int CGST = p1_price * 5;
     cout<<"CGST: \n"<<CGST;
     cout<<"SGST: \n"<<CGST;
-    cout<<"Total Payable amount: "<< temp + CGST + CGST;
-    temp = p1_price = CGST = count = 0;
+    cout<<"Extra Charges: "<<extra_charges;
+    cout<<"Total Payable amount: "<< temp + CGST + CGST + extra_charges;
+    temp = p1_price = CGST = count = extra_charges = 0;
+}
+
+void hotel::take_away(){
+    cout<<"How much Parcel you want? \n"; cin>>count;
+    extra_charges=20;
 }
 
 int main(){
@@ -64,6 +72,7 @@ int main(){
     hotel *h[100];
     int total_bill{},i,t,choice;
     char dish[50];
+    char com_suggestion[100];
 
     //actual program
     while(1){
@@ -92,7 +101,7 @@ int main(){
                 break;
             
             case 3:
-            cin.ignore();
+                cin.ignore();
                 cout<<"What you want to order sir/maam ?\n";
                 cin.getline(dish,20);
                 for(t=0;t<i;t++){
@@ -105,6 +114,35 @@ int main(){
                         break;
                     }
                 }
+                break;
+
+            case 4:
+                cin.ignore();
+                cout<<"What you want to order sir/maam ?\n";
+                cin.getline(dish,20);
+                for(t=0;t<i;t++){
+                    if(h[t] -> search(dish)){
+                        h[t] -> take_away();
+                        h[t] -> bill_genetator();
+                        break;
+                    }else{
+                        cout<<"This dish is not available. Sorry\n";
+                        break;
+                    }
+                }
+                break;
+
+            case 5:
+                cout<<"Any Complaint/Suggestions? \n";
+                cin.getline(com_suggestion,100);
+                cout<<"Thank You Sir/Maam!\n";
+                break;
+
+            case 6:
+                cout<<"Contact Details: \n";
+                cout<<setw(25)<<right<<"+91 9321836220\n";
+                cout<<setw(25)<<left<<"kunalparkar1233@gmail.com\n";
+                
         }
     }
 }
