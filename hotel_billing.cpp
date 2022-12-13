@@ -20,8 +20,8 @@ class hotel{
         void add_items();
         void show_menu();
         int search(char[]);
-        void dine_in();
-        void take_away();
+        void dine_in_h();
+        void take_away_h();
         void bill_genetator();
 };
 
@@ -44,7 +44,7 @@ int hotel::search(char order_dish[20]){
     }
 }
 
-void hotel::dine_in(){
+void hotel::dine_in_h(){
     cout<<"How much dishes you want? \n"; cin>>count;
     extra_charges = 0;
 }
@@ -62,7 +62,7 @@ void hotel::bill_genetator(){
     temp = p1_price = CGST = count = extra_charges = 0;
 }
 
-void hotel::take_away(){
+void hotel::take_away_h(){
     cout<<"How much Parcel you want? \n"; cin>>count;
     extra_charges=20;
 }
@@ -106,7 +106,7 @@ int main(){
                 cin.getline(dish,20);
                 for(t=0;t<i;t++){
                     if(h[t] -> search(dish)){
-                        h[t] -> dine_in();
+                        h[t] -> dine_in_h();
                         h[t] -> bill_genetator();
                         break;
                     }else{
@@ -122,7 +122,7 @@ int main(){
                 cin.getline(dish,20);
                 for(t=0;t<i;t++){
                     if(h[t] -> search(dish)){
-                        h[t] -> take_away();
+                        h[t] -> take_away_h();
                         h[t] -> bill_genetator();
                         break;
                     }else{
