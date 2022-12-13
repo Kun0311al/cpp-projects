@@ -76,7 +76,7 @@ int main(){
 
     //actual program
     while(1){
-        cout<<"Welcome to Modern Pride\n";
+        cout<<"\n\nWelcome to Modern Pride\n";
         cout<<"\nHow Can I Help You Sir/ Maam?\n";
         cout<<"1. Add new item\n";
         cout<<"2. Show Menu\n";
@@ -142,7 +142,11 @@ int main(){
                 cout<<"Contact Details: \n";
                 cout<<setw(25)<<right<<"+91 9321836220\n";
                 cout<<setw(25)<<left<<"kunalparkar1233@gmail.com\n";
-                
+                break;
+
+            default:
+                cout<<"Enter correct choice please\n";
+                break;
         }
     }
 }
