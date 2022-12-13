@@ -1,10 +1,12 @@
 #include<iostream>
-#include<string>
+#include<string.h>
 #include<iomanip>
+#include<stdlib.h>
 using namespace std;
 
 class hotel{
     private:
+        int count{0};
         int *price;
         char *dine_in, *take_away, *new_dish,*type_dish;
     public:
@@ -17,8 +19,10 @@ class hotel{
         }
         void add_items();
         void show_menu();
+        int search(char[]);
         void dine_in();
         void take_away();
+        void bill_genetator();
 };
 
 void hotel::add_items(){
@@ -31,11 +35,35 @@ void hotel::show_menu(){
     cout<<setw(20)<<new_dish<<setw(20)<<type_dish<<setw(10)<<*price;
 }
 
+int hotel::search(char order_dish[20]){
+    if(strcmp(order_dish,new_dish)){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+void hotel::dine_in(){
+    cout<<"How much dishes you want? \n"; cin>>count;
+}
+
+void hotel::bill_genetator(){
+    cout<<"Your Bill Sir/Maam\n";
+    cout<<"Total Price: "<<(*price)*count;
+    int temp = (*price)*count;
+    int p1_price = temp/100;
+    int CGST = p1_price * 5;
+    cout<<"CGST: \n"<<CGST;
+    cout<<"SGST: \n"<<CGST;
+    cout<<"Total Payable amount: "<< temp + CGST + CGST;
+    temp = p1_price = CGST = count = 0;
+}
+
 int main(){
     system("CLS");
     hotel *h[100];
     int total_bill{},i,t,choice;
-    char Dish[50];
+    char dish[50];
 
     //actual program
     while(1){
@@ -64,7 +92,19 @@ int main(){
                 break;
             
             case 3:
-                
+            cin.ignore();
+                cout<<"What you want to order sir/maam ?\n";
+                cin.getline(dish,20);
+                for(t=0;t<i;t++){
+                    if(h[t] -> search(dish)){
+                        h[t] -> dine_in();
+                        h[t] -> bill_genetator();
+                        break;
+                    }else{
+                        cout<<"This dish is not available. Sorry\n";
+                        break;
+                    }
+                }
         }
     }
 }
