@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<iomanip>
 using namespace std;
 
 class hotel{
@@ -26,7 +27,9 @@ void hotel::add_items(){
     cout<<"Enter the price of dish: "; cin>>*price;
 }
 
-
+void hotel::show_menu(){
+    cout<<setw(20)<<new_dish<<setw(20)<<type_dish<<setw(10)<<*price;
+}
 
 int main(){
     system("CLS");
@@ -57,7 +60,11 @@ int main(){
                 for(t=0;t<i;t++){
                     h[t] -> show_menu();
                 }
+                cout<<"What you want to order sir/maam ?\n";
                 break;
+            
+            case 3:
+                
         }
     }
 }
