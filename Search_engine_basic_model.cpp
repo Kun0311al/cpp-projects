@@ -6,21 +6,27 @@
 using namespace std;
 
 vector<string> documents = {
-    "kunal Parkar is an Engineering Student.",
+    "Kunal Parkar is an Engineering Student.",
     "This search engine model is developed by kunal.",
     "Birth date of kunal is 03 may 2003.",
-    "ananya Shetty is an Engineering Student.",
+    "Kunal has knowledge of HTML, CSS, javascript, c++.",
+    "This is the link to Kunal's Github account: https://github.com/Kun0311al",
+    "Ananya Shetty is an Engineering Student.",
     "This search engine model is developed by ananya.",
     "Birth date of ananya is 10 april 2003.",
-    "vijay is an Engineering Student.",
-    "vijay have knowledge about c++.",
+    "Ananya have the experience of digital marketing.",
+    "Vijay is an Engineering Student.",
+    "Vijay have knowledge about c++.",
     "Birth date of vijay is 16 april 2010."
 };
 
 vector<string> search(string query) {
     vector<string> results;
+    transform(query.begin(),query.end(),query.begin(),::toupper);
     for (string document : documents) {
-        if (document.find(query) != string::npos) {
+        string document2 = document;
+        transform(document2.begin(), document2.end(), document2.begin(), ::toupper);
+        if (document2.find(query) != string::npos) {
             results.push_back(document);
         }
     }
